@@ -1,0 +1,120 @@
+﻿@model TeacherEditDto
+@{
+    ViewData["Title"] = "EditTeacher";
+}
+
+<h1>EditTeacher</h1>
+
+<form method="post" class="mt-3">
+    <input asp-for="Id" />
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="UserName" class="form-control" placeholder=" " />
+                <label asp-for="UserName"></label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="FirstName" class="form-control" placeholder=" " />
+                <label asp-for="FirstName"></label>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="LastName" class="form-control" placeholder=" " />
+                <label asp-for="LastName"></label>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="NationalCode" class="form-control" placeholder=" " />
+                <label asp-for="NationalCode"></label>
+                <span asp-validation-for="NationalCode" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="PhoneNumber" class="form-control" placeholder=" " />
+                <label asp-for="PhoneNumber"></label>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="Email" class="form-control" placeholder=" " />
+                <label asp-for="Email"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <select asp-for="Gender" class="form-select" asp-items="Html.GetEnumSelectList<Gender>()" aria-label=" "></select>
+                <label asp-for="Gender"></label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="BirthDate" class="form-control" placeholder=" " />
+                <label asp-for="BirthDate"></label>
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="FieldOfStudy" class="form-control" placeholder=" " />
+                <label asp-for="FieldOfStudy"></label>
+                <span asp-validation-for="FieldOfStudy" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <select asp-for="AcademicDegree" class="form-select" asp-items="Html.GetEnumSelectList<AcademicDegree>()" aria-label=" "></select>
+                <label asp-for="AcademicDegree"></label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="YearsOfExperience" class="form-control" placeholder=" " />
+                <label asp-for="YearsOfExperience"></label>
+                <span asp-validation-for="YearsOfExperience" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <input type="submit" class="btn btn-success" value="Edit" />
+        </div>
+
+    </div>
+
+</form>

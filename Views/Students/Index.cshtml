@@ -1,0 +1,46 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" asp-action="CreateStudent">Add new Student</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>National Code</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Home Phone Number</th>
+                <th>Father Name</th>
+                <th>Place Of Birth</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+            <tr>
+                <td>@student.UserName</td>
+                <td>@student.FirstName @student.LastName</td>
+                <td>@student.NationalCode</td>
+                <td>@student.Email</td>
+                <td>@student.PhoneNumber</td>
+                <td>@student.HomePhoneNumber</td>
+                <td>@student.FatherName</td>
+                <td>@student.PlaceOfBirth</td>
+                <td>@student.Address</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+

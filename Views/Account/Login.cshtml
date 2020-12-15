@@ -1,0 +1,38 @@
+﻿@model LoginDto 
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form method="post">
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="UserName" class="form-control" placeholder=" " />
+                <label asp-for="UserName"></label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input asp-for="Password" class="form-control" placeholder=" " />
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mb-3">
+        <div class="col-md">
+            <input type="submit" class="btn btn-success" value="Login" />
+        </div>
+
+    </div>
+
+</form>
+

@@ -1,0 +1,49 @@
+﻿@model List<Teacher>
+@{
+    ViewData["Title"] = "Teachers";
+}
+
+<div class="row my-3">
+    <div class="col">
+        <a class="btn btn-primary" asp-action="CreateTeacher">Add new teacher</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>National Code</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Field Of Study</th>
+                <th>Academic Degree</th>
+                <th>Years Of Experience</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var teacher in Model)
+            {
+                <tr>
+                    <td>@teacher.UserName</td>
+                    <td>@teacher.FirstName @teacher.LastName</td>
+                    <td>@teacher.NationalCode</td>
+                    <td>@teacher.Email</td>
+                    <td>@teacher.PhoneNumber</td>
+                    <td>@teacher.FieldOfStudy</td>
+                    <td>@teacher.AcademicDegree</td>
+                    <td>@teacher.YearsOfExperience</td>
+                    <td>
+                        <a asp-action="EditTeacher" asp-route-id="@teacher.Id" class="btn btn-outline-primary">Edit</a>
+                        <!-- change Delete to form and post method -->
+                        <a asp-action="DeleteTeacher" asp-route-id="@teacher.Id" class="btn btn-outline-danger" onclick="return confirm('Do you really want to delete this teacher?')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
